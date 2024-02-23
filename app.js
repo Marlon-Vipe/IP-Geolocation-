@@ -1,14 +1,13 @@
-const url = 'https://ip-geo-location.p.rapidapi.com/ip/23.123.12.11?format=json';
 const options = {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Key': 'b71a658ca3msh1407b4b55e3d999p134be8jsn7c7b29462668',
+		'X-RapidAPI-Key': 'your key',
 		'X-RapidAPI-Host': 'ip-geo-location.p.rapidapi.com'
 	}
 };
 
 const fetchIpInfo = ip => {
-    return fetch(url, options)
+    return fetch(`https://ip-geo-location.p.rapidapi.com/ip/${ip}?format=json`, options)
     .then(res => res.json())
     .catch(err => console.log(err))
 }
